@@ -16,7 +16,7 @@ public class Todo {
 
     private String what;
 
-    private Date when;
+    private Date toWhen;
 
     private Date done;
 
@@ -36,12 +36,12 @@ public class Todo {
         this.what = what;
     }
 
-    public Date getWhen() {
-        return when;
+    public Date getToWhen() {
+        return toWhen;
     }
 
-    public void setWhen(Date when) {
-        this.when = when;
+    public void setToWhen(Date when) {
+        this.toWhen = when;
     }
 
     public Date getDone() {
