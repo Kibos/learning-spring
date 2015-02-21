@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
-	
+
 	<display-name>My TO-DO List</display-name>
 
 	<!-- It's used to integrate spring in our application -->
@@ -18,4 +18,19 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/spring/applicationContext.xml</param-value>
 	</context-param>
+
+	<!-- O dispatcherServlet é o servlet do spring que processará as chamadas 
+		HTTP e chamará nossos métodos da camada de controller -->
+	<servlet>
+		<servlet-name>learning-spring-mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- E agora estou falando que o servlet que criamos lá em cima (learning-spring) 
+		será o responsável por cuidar todas as chamadas que bater em /rest/* -->
+	<servlet-mapping>
+		<servlet-name>learning-spring-mvc</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
 </web-app>

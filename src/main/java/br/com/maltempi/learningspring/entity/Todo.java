@@ -1,5 +1,6 @@
 package br.com.maltempi.learningspring.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -8,7 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Todo {
+public class Todo implements Serializable {
+
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -6802643739537465801L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
