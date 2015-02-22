@@ -12,4 +12,6 @@ public interface TodoRepository extends CrudRepository<Todo, Integer> {
     public List<Todo> findByDoneOrderByDoneAsc(Date done);
     
     public List<Todo> findByDoneBetween(Date dateFrom, Date dateTo);
+    
+    public List<Todo> findAll();
 }
